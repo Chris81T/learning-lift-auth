@@ -23,7 +23,7 @@ class Boot {
 
 		// where to search snippet
     LiftRules.addToPackages("code")
-
+    
     // Build SiteMap
     LiftRules.setSiteMap(Pages.siteMap)
 
@@ -46,10 +46,11 @@ class Boot {
 
 object Pages {
 
-	val welcome = Menu.i("Welcome") / "index" >> RequireAuthentication
-	val login = Menu.i("Login") / "login" >> RequireNoAuthentication
+	val welcome = Menu.i("Welcome") / "index"
+	val login = Menu.i("Login") / "login" >> RequireNoAuthentication >> DefaultLogin 
+	val publicPage = Menu.i("Public Site") / "public"
 	val privatePage = Menu.i("Private Site") / "private" >> RequireAuthentication >> HasRole("admin")
 
-	def siteMap = SiteMap(List(welcome, login, privatePage) ::: Shiro.menus : _*)
+	def siteMap = SiteMap(List(welcome, publicPage, privatePage, login) ::: Shiro.menus : _*)
 
 }

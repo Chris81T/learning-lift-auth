@@ -43,6 +43,12 @@
 				<version>0.0.6</version>
 			</dependency>
 
+	<!-- required for org.apache.commons.collections.FastHashMap dependencies / since using custom realm -->
+ 	<dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>1.0</version>
+    </dependency>
 
 	    </dependencies>	    
 	</dependencyManagement>
@@ -67,6 +73,11 @@
 			<groupId>eu.getintheloop</groupId>
 			<artifactId>lift-shiro_${version.scala}</artifactId>
 		</dependency>
+
+ 	<dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+    </dependency>
 
 	</dependencies>
 	

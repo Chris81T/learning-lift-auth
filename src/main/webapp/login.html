@@ -9,7 +9,15 @@
 
     <section>
         <h4>Login</h4>
-
+        <form data-lift="lift:LoginSnippet?form=post">
+	        <label>Username:</label>
+	        <input name="user" type="text" placeholder="Please enter your name"></input>
+	        <label>Password:</label>
+	        <input name="password" type="password" placeholder="Please enter your password"></textarea></input>
+	        <!-- custom attribute -> small required for foundation -->
+	        <button name="login-button" class="button" type="submit">login</button>
+	        <span class="lift:Msg?id=failed&errorClass=error%20alert%20label">failed</span> 
+        </form>
     </section>
     
 </div>      
